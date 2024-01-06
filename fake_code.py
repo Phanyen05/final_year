@@ -77,6 +77,8 @@ while start_date <= end_date:
     month_folder = start_date.strftime("%m")
     day_folder = start_date.strftime("%d")
     folder_path = os.path.join(year_folder, month_folder, day_folder)
+    create_folder(folder_path)
+
     # Lọcvà lưu trữ dữ liệu trong tệp Parquet
     filtered_df = df[(df['transaction_ID'].dt.date == start_date)]
     file_name = "data_affiliate.parquet"
